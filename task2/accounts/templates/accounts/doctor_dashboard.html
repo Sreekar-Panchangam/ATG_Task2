@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Doctor Dashboard</h2>
+  <p>Welcome, Dr.{{ user.first_name }}!</p>
+  <h3>Your Details:</h3>
+  <div class="card" style="width:400px">
+    <img class="card-img-top" src="{{ user.profile_picture.url }}" alt="Card image">
+    <div class="card-body">
+      <h4 class="card-title">{{ user.first_name }} {{ user.last_name }}</h4>
+      <p class="card-text"></p>
+      <p class="card-text">Username: {{ user.username }}</p>
+      <p class="card-text">Email: {{ user.email }}</p>
+      <p class="card-text">Address: {{ user.address_line1 }}, {{ user.city }}, {{ user.state }}</p>
+      <p class="card-text">Pincode: {{ user.pincode }}</p>
+    </div>
+  </div>
+{% endblock %}
